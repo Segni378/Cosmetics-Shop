@@ -1,0 +1,46 @@
+.rec .rec-swipable{
+    height:500px;
+    
+}
+.img{
+    height: 500px;
+    width:100%;
+}
+.left{
+    /* padding: 50px; */
+    margin:8%;
+    margin-bottom: 0;
+}
+.cGKbZh {
+    width:40px;
+    font-size: 1.4em;
+}
+.right{
+    margin: 8% 0;
+}
+.title{
+    color:#666;
+    font-weight: bold;
+}
+.imgContainer{
+    position: relative;
+}
+.icon{
+    position: absolute;
+    top:5px;
+    right:5px;
+    color : #c2c2c2;
+}
+.buttons{
+    padding:10px;
+    width: 90%;
+    margin:0px 25px;
+}
+.btn{
+    width: 45%;
+    margin:10px;
+    padding:10px 25px;
+}
+.container{
+    background-color: #f6f3f0;
+}

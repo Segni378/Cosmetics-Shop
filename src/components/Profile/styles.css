@@ -1,0 +1,102 @@
+.root {
+  width: 100vw;
+  height: 100%;
+  flex-grow: 1;
+  background-color: rgb(246, 243, 240);
+  margin: 0px;
+  padding: 20px;
+  display: flex;
+}
+
+.root .tabs {
+  /* width: 30%; */
+  margin: 80px auto;
+  margin-left: 40px;
+  margin-right: 20px;
+}
+
+.tabs ul {
+  display: flex;
+  flex-direction: column;
+}
+.tabs ul li:first-child {
+  color: black;
+}
+.tabs ul li {
+  margin-top: 15px;
+  color: darkgrey;
+  position: relative;
+  padding: 5px;
+}
+
+.tabs li:hover {
+  cursor: pointer;
+}
+.profile {
+  width: 30%;
+  height: 80%;
+  margin: 80px auto;
+  margin-right: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 30px;
+  flex-grow: 2;
+}
+
+.profile-picture {
+  display: flex;
+  margin: auto;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 5px solid #f7eae8;
+  overflow: hidden;
+}
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tabs li::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #ffafaf;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.tabs li:hover::after {
+  width: 100%;
+  left: 0;
+  text-decoration: none;
+}
+@media (max-width: 800px) {
+  .profile {
+    width: 100%;
+    height: 100%;
+    margin: 80px auto;
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 30px;
+    flex-grow: 2;
+  }
+  .root {
+    display: flex;
+    flex-direction: column;
+  }
+  .tabs {
+    display: none;
+  }
+
+}
