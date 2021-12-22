@@ -21,8 +21,7 @@ const getCartItems = () => async (dispatch) => {
           dispatch({
             type: cartConstants.ADD_TO_CART_SUCCESS,
             payload: {
-               cartItems:
-              Object.keys(cartItems).map((key) => ({
+              cartItems: Object.keys(cartItems).map((key) => ({
                 _id: key,
                 price: cartItems[key].price,
                 name: cartItems[key].name,

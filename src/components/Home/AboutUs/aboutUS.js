@@ -11,7 +11,7 @@ import fre from './Fre.jpg'
 
 const  About= ({id,name,image,email,semister, department,skills})=> {
     return (
-        <div>
+        <div style = {{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
             
            
            <div>

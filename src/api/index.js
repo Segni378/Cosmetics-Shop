@@ -69,9 +69,9 @@ localStorage.getItem("profile");
 
 //export const signIn = (formData) => API.post('${commonURL}/api/auth/login`, formData);
 export const signIn = (formData) =>
-  axios.post(`${commonURL}/api/auth/login`, formData);
+  axios.post(`${commonURL}api/auth/login`, formData);
 export const signUp = (formData) =>
-  axios.post(`${commonURL}/api/auth/signup`, formData);
+  axios.post(`${commonURL}api/auth/signup`, formData);
 export const fetchusers = () => API.get("/user/allusers");
 export const addtoCart = (product) => API.post("/user/cart/addtocart", product);
 export const removeCart = () => API.post("/user/cart/removecart");

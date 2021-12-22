@@ -41,7 +41,10 @@ export const ProfilePage = () => {
             <div className="title">Profile</div>
             <div className="profile-details">
               <div className="profile-picture">
-                <img src="https://djsf-server.herokuapp.com/images/uploads/default.png" />
+                <img
+                  src="https://djsf-server.herokuapp.com/images/uploads/default.png"
+                  alt="img"
+                />
               </div>
               <div className="list">
                 <Grid container>
@@ -73,6 +76,7 @@ export const ProfilePage = () => {
                       <ListItemText
                         className={classes.TextField}
                         primary="Contact Number"
+                        secondary={user && user.result.contactNumber}
                       />
                     </List>
                   </Grid>
@@ -81,6 +85,7 @@ export const ProfilePage = () => {
                       <ListItemText
                         className={classes.TextField}
                         primary="Address"
+                        secondary={user && user.result.address}
                       />
                     </List>
                   </Grid>

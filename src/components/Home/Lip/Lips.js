@@ -134,7 +134,6 @@ const CustomCard = ({
   const [add, setadd] = useState(false);
   const [data, setData] = useState({ product: "", user: "" });
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
-  console.log("Lip Imageee ", lipimage);
   const AddtoFavorite = (e) => {
     if (e.target.style.color != "red") {
       e.target.style.color = "red";

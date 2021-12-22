@@ -88,19 +88,21 @@ const SkinProduct = ({ product, added }) => {
   const dispatch = useDispatch();
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const history = useHistory();
-  const AddtoFavorite = (e) => {
-    if (e.target.style.color != "red") {
+
+  const AddtoFavorite = (val) => (e) => {
+    if (val != "red") {
       e.target.style.color = "red";
+      added.push(product);
       setadd(true);
-      console.log("What are your doing in here");
+
       setData({ product: product._id, user: user?.result._id });
     } else {
       e.target.style.color = "";
+      added.pop();
       setadd(false);
-      dispatch(removeFromWishList(product.id));
+      dispatch(removeFromWishList(product._id));
     }
   };
-
   useEffect(() => {
     if (add == true) {
       dispatch(addTowishList(data));
@@ -110,14 +112,11 @@ const SkinProduct = ({ product, added }) => {
   const handleBgChange = (e) => {
     e.target.style.backgroundImage = `url(https://djsf-server.herokuapp.com/images/uploads/${product.images[1]})`;
   };
-  const skins = useSelector((state) => state.products);
 
   const handleBgLeave = (e) => {
     e.target.style.backgroundImage = `url(https://djsf-server.herokuapp.com/images/uploads/${product.images[0]})`;
   };
-  const makeItRed = (e) => {
-    e.target.style.color = "red";
-  };
+
   return (
     <div classNmae={classes.skinProducts}>
       <div className={classes.imageContainer}>
@@ -128,7 +127,11 @@ const SkinProduct = ({ product, added }) => {
             onMouseLeave={handleBgLeave}
           ></div>
         </Link>
-        <IconButton className={classes.Favorite} onClick={AddtoFavorite}>
+        <IconButton
+          className={classes.Favorite}
+          onClick={AddtoFavorite(added.length > 0 ? "red" : "")}
+          style={{ color: added.length > 0 ? "red" : "" }}
+        >
           <Favorite />
         </IconButton>
       </div>

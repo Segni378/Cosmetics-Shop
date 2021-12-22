@@ -59,7 +59,7 @@ const TheProducts = ({ product }) => {
       backgroundRepeat: "no-repeat",
       marginBottom: "10px",
       cursor: "pointer",
-      transition: "backgroundSize ease-out 4s",
+      transition: "backgroundSize ease 4s",
       overflow: "hidden",
       "&:hover": {
         backgroundSize: "105% 105%",

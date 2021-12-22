@@ -15,43 +15,49 @@ import {
 } from "../../../Redux/Actions/wishList";
 import "./Brushes.css";
 
+import { getMyWishList } from "../../../Redux/Actions/wishList";
+
 const Brushes = () => {
-  const FavoriteStyles = {
-    backgroundColor: "yellow",
-    width: "50px",
-    height: "50px",
-  };
   const [add, setadd] = useState(false);
   const [info, setinfo] = useState({ product: "", user: "" });
   const dispatch = useDispatch();
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+  let added = [];
 
-  const AddtoFavorite = (id) => (e) => {
-    console.log("Clicked!");
-    if (e.target.style.color != "red") {
+  const AddtoFavorite = (id, val, addedProducts) => async (e) => {
+    if (val != "red") {
       e.target.style.color = "red";
+      addedProducts.push(id);
       setadd(true);
       setinfo({ product: id, user: user?.result._id });
     } else {
+      addedProducts.push();
+      await dispatch(removeFromWishList(id));
       e.target.style.color = "";
       setadd(false);
-      dispatch(removeFromWishList(id));
     }
   };
-  const history = useHistory();
 
   useEffect(() => {
     if (add) {
       dispatch(addTowishList(info));
     }
   }, [add]);
+  let addedProducts;
 
-  const products = useSelector((state) => state.products);
-  const { data } = products;
+  useEffect(() => {
+    dispatch(getMyWishList());
+  }, [dispatch, addedProducts]);
+
+  const wishList = useSelector((state) => state.wishList);
+  const { myWishList } = wishList;
+
   return (
     <div className="myBrush">
       <div className="Brushes">
         {BrushContent.map((Brush) => {
+          addedProducts = [];
+          addedProducts = myWishList.filter((prdct) => prdct.id == Brush.id);
           return (
             <div
               key={Brush.id}
@@ -90,9 +96,14 @@ const Brushes = () => {
                     style={{
                       width: "35%",
                       margin: "auto",
-                      color: "rgb(240, 239, 234)",
+                      color:
+                        addedProducts.length > 0 ? "red" : "rgb(240, 239, 234)",
                     }}
-                    onClick={AddtoFavorite(Brush.id)}
+                    onClick={AddtoFavorite(
+                      Brush.id,
+                      addedProducts.length > 0 ? "red" : "",
+                      addedProducts
+                    )}
                   >
                     <Favorite />
                   </IconButton>

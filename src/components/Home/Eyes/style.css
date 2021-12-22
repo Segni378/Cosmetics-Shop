@@ -74,7 +74,7 @@ h6 {
   /* -webkit-filter: blur(2px); 
     filter: blur(2px);
    */
-  background-color: rgb(143, 143, 143);
+  background-color: rgb(192, 192, 194);
   background-blend-mode: multiply;
 }
 .lip--mask {
@@ -118,6 +118,7 @@ h6 {
       "lipglass"
       "lipglass"
       "lipoil"
+      "lipoil"
       "lipoil";
   }
   .content {
@@ -128,7 +129,7 @@ h6 {
     /* -webkit-filter: blur(2px); 
       filter: blur(2px);
      */
-    background-color: rgb(143, 143, 143);
+    background-color: rgb(192, 192, 194);
     background-blend-mode: multiply;
   }
 }
