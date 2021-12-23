@@ -6,6 +6,7 @@
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
+    "@hookform/resolvers": "^2.8.5",
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.49",
@@ -20,6 +21,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-elastic-carousel": "^0.11.5",
+    "react-hook-form": "^7.22.3",
     "react-icons": "^4.2.0",
     "react-redux": "^7.2.4",
     "react-reveal": "^1.2.2",
@@ -34,7 +36,8 @@
     "simple-rating-stars": "^1.6.0",
     "styled-components": "^5.3.0",
     "uuid": "^8.3.2",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",
